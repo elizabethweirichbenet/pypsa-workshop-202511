@@ -3,10 +3,10 @@
 
 This repository contains PyPSA(-Eur) materials for a workshop organized for a broad audience of researchers and industry stakeholders interested in energy system modelling.
 
-The workshop is hosted by **RISE (The research institute of Sweden)** (Dr. Markus Millinger).
+The workshop is hosted by **RISE (Research Institutes of Sweden)** (Markus Millinger).
 The workshop is co-organised by the **ENSYS research group at TU Berlin** — Fabian Neumann and Iegor Riepin — with support from the **RESILIENT project**.
 
-The TU Berlin team gratefully acknowledges funding by the German Federal Ministry for Economic Affairs and Energy (BMWE) under Grant No. 03EI4083A (RESILIENT project) jointly with the CETPartnership (https://cetpartnership.eu/) through the Joint Call 2022, which supports our modelling workshops and public training events.
+The TU Berlin team gratefully acknowledges funding by the German Federal Ministry for Economic Affairs and Energy (BMWE) under Grant No. 03EI4083A (RESILIENT project) jointly with the CETPartnership (https://cetpartnership.eu/) through the Joint Call 2022, which supports our modelling workshops and public training events. RISE gratefully acknowledges funding from the Swedish Energy Agency, project number 2023-00888, jointly with the CETPartnership under the 2022 joint call for research proposals, co-funded by the European Commission (grant agreement number 101069750).
 
 More about our work in RESILIENT project: [https://resilient-project.github.io/](https://resilient-project.github.io/)
 
