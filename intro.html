@@ -445,13 +445,13 @@ The workshop is co-organised by the <strong>ENSYS research group at TU Berlin</s
 <h3>Create and activate the environment<a class="headerlink" href="#create-and-activate-the-environment" title="Link to this heading">#</a></h3>
 <p>We recommend using the locked environment files from <a class="reference external" href="https://github.com/PyPSA/pypsa-eur/tree/master/envs">PyPSA-Eur</a> for reproducibility. Download the appropriate file for your platform:</p>
 <ul class="simple">
-<li><p><strong>Linux (Intel/AMD)</strong>: <code class="docutils literal notranslate"><span class="pre">linux-64.lock.yaml</span></code></p></li>
-<li><p><strong>macOS (Intel)</strong>: <code class="docutils literal notranslate"><span class="pre">osx-64.lock.yaml</span></code></p></li>
-<li><p><strong>macOS (Apple Silicon)</strong>: <code class="docutils literal notranslate"><span class="pre">osx-arm64.lock.yaml</span></code></p></li>
-<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">win-64.lock.yaml</span></code></p></li>
+<li><p><strong>Linux (Intel/AMD)</strong>: <code class="docutils literal notranslate"><span class="pre">default_linux-64.pin.txt</span></code></p></li>
+<li><p><strong>macOS (Intel)</strong>: <code class="docutils literal notranslate"><span class="pre">default_osx-64.pin.txt</span></code></p></li>
+<li><p><strong>macOS (Apple Silicon)</strong>: <code class="docutils literal notranslate"><span class="pre">default_osx-arm64.pin.txt</span></code></p></li>
+<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">default_win-64.pin.txt</span></code></p></li>
 </ul>
 <p>Create the conda environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>linux-64.lock.yaml<span class="w">  </span><span class="c1"># replace with your platform&#39;s file</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>envs/envs/default_linux-64.pin.txt<span class="w"> </span><span class="c1"># replace with your platform&#39;s file</span>
 conda<span class="w"> </span>activate<span class="w"> </span>pypsa-eur
 </pre></div>
 </div>
