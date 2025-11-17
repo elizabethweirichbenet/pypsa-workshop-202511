@@ -44,15 +44,15 @@ cd pypsa-workshop-202511
 
 We recommend using the locked environment files from [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur/tree/master/envs) for reproducibility. Download the appropriate file for your platform:
 
-- **Linux (Intel/AMD)**: `linux-64.lock.yaml`
-- **macOS (Intel)**: `osx-64.lock.yaml`
-- **macOS (Apple Silicon)**: `osx-arm64.lock.yaml`
-- **Windows**: `win-64.lock.yaml`
+- **Linux (Intel/AMD)**: `default_linux-64.pin.txt`
+- **macOS (Intel)**: `default_osx-64.pin.txt`
+- **macOS (Apple Silicon)**: `default_osx-arm64.pin.txt`
+- **Windows**: `default_win-64.pin.txt`
 
 Create the conda environment:
 
 ```bash
-conda env create -f linux-64.lock.yaml  # replace with your platform's file
+conda env create -f envs/envs/default_linux-64.pin.txt # replace with your platform's file
 conda activate pypsa-eur
 ```
 
