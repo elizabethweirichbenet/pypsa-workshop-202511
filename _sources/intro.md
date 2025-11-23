@@ -52,7 +52,7 @@ We recommend using the locked environment files from [PyPSA-Eur](https://github.
 Create the conda environment:
 
 ```bash
-conda env create -f envs/envs/default_linux-64.pin.txt # replace with your platform's file
+conda create --name pypsa-eur --file "envs/default_linux-64.pin.txt" # replace with your platform's file
 conda activate pypsa-eur
 ```
 
