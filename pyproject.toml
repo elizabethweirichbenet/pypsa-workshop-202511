@@ -24,7 +24,7 @@ dependencies = [
     "pyepsg",
     "cartopy>=0.22",
     "matplotlib>=3.9",
-    "plotly",
+    "plotly<=6.0",
     "graphviz",
     "jupyter-book",
     "highspy>=1.5.3",
