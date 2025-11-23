@@ -444,7 +444,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pypsa-and-linopy-a-simple-dispatch-problem">
 <h1>Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem<a class="headerlink" href="#introduction-to-pypsa-and-linopy-a-simple-dispatch-problem" title="Link to this heading">#</a></h1>
-<img src="https://github.com/fneum/data-science-for-esm/raw/main/data-science-for-esm/pypsa-logo.png" width="300px" />
+<img src="./logo-secondary-light-pypsa.svg" width="150px" />
 <p>PyPSA stands for <strong>Python for Power System Analysis</strong>.</p>
 <p>PyPSA is an open source Python package for simulating and optimising modern energy systems that include features such as</p>
 <ul class="simple">
@@ -475,7 +475,7 @@ document.write(`
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Documentation for this package is available at <a class="reference external" href="https://pypsa.readthedocs.io">https://pypsa.readthedocs.io</a>.</p>
+<p>Documentation for this package is available at <a class="reference external" href="https://docs.pypsa.org/">https://docs.pypsa.org/</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -894,13 +894,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4ceaf6c-2eab-4cab-9d16-6b939d94b729">
-<span class="eqno">(1)<a class="headerlink" href="#equation-c4ceaf6c-2eab-4cab-9d16-6b939d94b729" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dde1d61a-d6ab-411f-9bdb-5210685822d4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-dde1d61a-d6ab-411f-9bdb-5210685822d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-318d7dbb-07fa-4017-b318-45c29e767a99">
-<span class="eqno">(2)<a class="headerlink" href="#equation-318d7dbb-07fa-4017-b318-45c29e767a99" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0c9f131d-4af0-4a77-a288-71e04e61a1ad">
+<span class="eqno">(2)<a class="headerlink" href="#equation-0c9f131d-4af0-4a77-a288-71e04e61a1ad" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -918,7 +918,7 @@ D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 <p>The <code class="docutils literal notranslate"><span class="pre">n.optimize()</span></code> function can take a variety of arguments. The most relevant for the moment is the choice of the solver (e.g. “highs” and “gurobi”). They need to be installed on your computer, to use them here!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">,</span> <span class="n">assign_all_duals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -942,8 +942,11 @@ Solver model: available
 Solver message: Optimal
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper were not assigned to the network.
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-hmq4efjz has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-omrao0wm has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -956,12 +959,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-hmq4efjz
+Model name          : linopy-problem-omrao0wm
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-jttpado_.sol
+Writing the solution to /tmp/linopy-solve-c8xh5a7c.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1093,20 +1096,14 @@ Writing the solution to /tmp/linopy-solve-jttpado_.sol
   <thead>
     <tr style="text-align: right;">
       <th>name</th>
-      <th>gas</th>
-      <th>nuclear</th>
     </tr>
     <tr>
       <th>snapshot</th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>now</th>
-      <td>-0.0</td>
-      <td>-60.0</td>
     </tr>
   </tbody>
 </table>
@@ -1365,7 +1362,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-x1cjlga_ has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-l_yvgj6b has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -1378,12 +1375,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-x1cjlga_
+Model name          : linopy-problem-l_yvgj6b
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-itysizl5.sol
+Writing the solution to /tmp/linopy-solve-4acw8q7x.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)

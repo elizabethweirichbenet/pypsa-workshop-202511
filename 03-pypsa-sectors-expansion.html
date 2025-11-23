@@ -504,9 +504,7 @@ document.write(`
 <span class="n">costs</span> <span class="o">=</span> <span class="n">costs</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">defaults</span><span class="p">)</span>
 
 <span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s2">&quot;OCGT&quot;</span><span class="p">,</span> <span class="s2">&quot;fuel&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s2">&quot;gas&quot;</span><span class="p">,</span> <span class="s2">&quot;fuel&quot;</span><span class="p">]</span>
-<span class="c1"># costs.at[&quot;CCGT&quot;, &quot;fuel&quot;] = costs.at[&quot;gas&quot;, &quot;fuel&quot;]</span>
 <span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s2">&quot;OCGT&quot;</span><span class="p">,</span> <span class="s2">&quot;CO2 intensity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s2">&quot;gas&quot;</span><span class="p">,</span> <span class="s2">&quot;CO2 intensity&quot;</span><span class="p">]</span>
-<span class="c1"># costs.at[&quot;CCGT&quot;, &quot;CO2 intensity&quot;] = costs.at[&quot;gas&quot;, &quot;CO2 intensity&quot;]</span>
 </pre></div>
 </div>
 </div>
@@ -581,7 +579,7 @@ a(r, n) = \frac{r}{1-(1+r)^{-n}}
 <span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># fallback if url is not available</span>
-<span class="c1"># ts = pd.read_csv(&quot;../data/time-series-lecture-2.csv&quot;, index_col=0, parse_dates=True)</span>
+<span class="c1"># ts = pd.read_csv(&quot;../resources/time-series-lecture-2.csv&quot;, index_col=0, parse_dates=True)</span>
 </pre></div>
 </div>
 </div>
@@ -979,7 +977,7 @@ a(r, n) = \frac{r}{1-(1+r)^{-n}}
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some of the sector-coupling technologies we are going to add have multiple ouputs (e.g. CHP plants producing heat and power). PyPSA can automatically handle links have more than one input (<code class="docutils literal notranslate"><span class="pre">bus0</span></code>)
+<p>Some of the sector-coupling technologies might have multiple ouputs (e.g. CHP plants producing heat and power). PyPSA can automatically handle links have more than one input (<code class="docutils literal notranslate"><span class="pre">bus0</span></code>)
 and/or output (i.e. <code class="docutils literal notranslate"><span class="pre">bus1</span></code>, <code class="docutils literal notranslate"><span class="pre">bus2</span></code>, <code class="docutils literal notranslate"><span class="pre">bus3</span></code>) with a given efficieny (<code class="docutils literal notranslate"><span class="pre">efficiency</span></code>, <code class="docutils literal notranslate"><span class="pre">efficiency2</span></code>, <code class="docutils literal notranslate"><span class="pre">efficiency3</span></code>).</p>
 </div>
 <p>Add a <code class="docutils literal notranslate"><span class="pre">Link</span></code> for the fuel cell which reconverts hydrogen to electricity:</p>
@@ -1070,10 +1068,10 @@ Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/11 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  82%|████████▏ | 9/11 [00:00&lt;00:00, 83.38it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  82%|████████▏ | 9/11 [00:00&lt;00:00, 85.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 11/11 [00:00&lt;00:00, 70.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 11/11 [00:00&lt;00:00, 71.17it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1082,14 +1080,14 @@ Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 253.49it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 229.88it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.2s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-rlzu3bsf has 37237 rows; 17527 cols; 71227 nonzeros
+LP linopy-problem-bbnzjrjb has 37237 rows; 17527 cols; 71227 nonzeros
 Coefficient ranges:
   Matrix  [1e-04, 4e+00]
   Cost    [4e-02, 2e+05]
@@ -1124,13 +1122,13 @@ Solver message: Optimal
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-rlzu3bsf
+Model name          : linopy-problem-bbnzjrjb
 Model status        : Optimal
 Simplex   iterations: 14390
 Objective value     :  4.7521933007e+10
 P-D objective error :  5.6592007144e-14
-HiGHS run time      :          3.87
-Writing the solution to /tmp/linopy-solve-lp0jrfz4.sol
+HiGHS run time      :          3.88
+Writing the solution to /tmp/linopy-solve-cbd2ao_2.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1797,10 +1795,10 @@ Index([&#39;0&#39;, &#39;1&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/12 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  75%|███████▌  | 9/12 [00:00&lt;00:00, 86.51it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  75%|███████▌  | 9/12 [00:00&lt;00:00, 86.84it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 12/12 [00:00&lt;00:00, 77.38it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 12/12 [00:00&lt;00:00, 77.82it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1809,14 +1807,14 @@ Index([&#39;0&#39;, &#39;1&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 258.47it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 233.82it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.2s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-a9da9stc has 37238 rows; 17527 cols; 73417 nonzeros
+LP linopy-problem-yod9v4hd has 37238 rows; 17527 cols; 73417 nonzeros
 Coefficient ranges:
   Matrix  [1e-04, 4e+00]
   Cost    [4e-02, 2e+05]
@@ -1851,13 +1849,13 @@ Solver message: Optimal
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-a9da9stc
+Model name          : linopy-problem-yod9v4hd
 Model status        : Optimal
 Simplex   iterations: 11327
 Objective value     :  7.5338336224e+10
 P-D objective error :  6.8862527914e-15
 HiGHS run time      :          3.24
-Writing the solution to /tmp/linopy-solve-4333aq16.sol
+Writing the solution to /tmp/linopy-solve-ohbzwl42.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
