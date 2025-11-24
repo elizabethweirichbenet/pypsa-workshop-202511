@@ -188,7 +188,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-pypsa-more-features.html">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-pypsa-sectors-expansion.html">Advanced models in <code class="docutils literal notranslate"><span class="pre">pypsa</span></code>: capacity expansion planning with sector coupling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pypsa-stochastic.html">Stochastic optimization with PyPSA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-pypsa-stochastic-opt.html">Stochastic Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config-small-system.html">config-small-system.yaml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config-big-system.html">config-big-system.yaml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex-python.html">Annex: Intro to the basics of <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
@@ -892,13 +892,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f021915b-5d74-4f9e-bb54-8a9a73426a59">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f021915b-5d74-4f9e-bb54-8a9a73426a59" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-71173bbe-d598-4611-8147-11d24602b9a1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-71173bbe-d598-4611-8147-11d24602b9a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fec15b65-4476-4e83-a7e1-626d407cee52">
-<span class="eqno">(2)<a class="headerlink" href="#equation-fec15b65-4476-4e83-a7e1-626d407cee52" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-70a3c8f2-4b17-471f-a111-60e3936b4a37">
+<span class="eqno">(2)<a class="headerlink" href="#equation-70a3c8f2-4b17-471f-a111-60e3936b4a37" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -944,7 +944,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-sg_lq_wk has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-tlabtjva has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -957,12 +957,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-sg_lq_wk
+Model name          : linopy-problem-tlabtjva
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-shk2a1we.sol
+Writing the solution to /tmp/linopy-solve-x7uuczce.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1360,7 +1360,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-ol85s7cq has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-endzumci has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -1373,12 +1373,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-ol85s7cq
+Model name          : linopy-problem-endzumci
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-dvmk2mbi.sol
+Writing the solution to /tmp/linopy-solve-45w3y3g6.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
