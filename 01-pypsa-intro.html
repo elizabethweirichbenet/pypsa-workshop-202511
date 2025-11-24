@@ -444,9 +444,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pypsa-and-linopy-a-simple-dispatch-problem">
 <h1>Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem<a class="headerlink" href="#introduction-to-pypsa-and-linopy-a-simple-dispatch-problem" title="Link to this heading">#</a></h1>
-<img src="./logo-secondary-light-pypsa.svg" width="150px" />
-<p>PyPSA stands for <strong>Python for Power System Analysis</strong>.</p>
-<p>PyPSA is an open source Python package for simulating and optimising modern energy systems that include features such as</p>
+<p><code class="docutils literal notranslate"><span class="pre">PyPSA</span></code> is an open source Python package for simulating and optimising modern energy systems that include features such as</p>
 <ul class="simple">
 <li><p>conventional generators with unit commitment (ramp-up, ramp-down, start-up, shut-down),</p></li>
 <li><p>time-varying wind and solar generation,</p></li>
@@ -894,13 +892,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f0763cb-15f2-4cbe-94a0-3406c7a797f3">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1f0763cb-15f2-4cbe-94a0-3406c7a797f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f021915b-5d74-4f9e-bb54-8a9a73426a59">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f021915b-5d74-4f9e-bb54-8a9a73426a59" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fba38d03-e706-4d2d-bbf1-a181d1bc4071">
-<span class="eqno">(2)<a class="headerlink" href="#equation-fba38d03-e706-4d2d-bbf1-a181d1bc4071" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fec15b65-4476-4e83-a7e1-626d407cee52">
+<span class="eqno">(2)<a class="headerlink" href="#equation-fec15b65-4476-4e83-a7e1-626d407cee52" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -946,7 +944,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-17pd7nkn has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-sg_lq_wk has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -959,12 +957,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-17pd7nkn
+Model name          : linopy-problem-sg_lq_wk
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-94fh3cfj.sol
+Writing the solution to /tmp/linopy-solve-shk2a1we.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1362,7 +1360,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-944konff has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-ol85s7cq has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -1375,12 +1373,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-944konff
+Model name          : linopy-problem-ol85s7cq
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-ss6_guvk.sol
+Writing the solution to /tmp/linopy-solve-dvmk2mbi.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
